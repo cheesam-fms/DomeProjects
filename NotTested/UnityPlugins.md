@@ -17,6 +17,6 @@ A full-featured renderer for capturing 360° panoramic video and stereo output.
 
 ### [Dome Tools](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/dome-tools-62664)
 - **Not compatible with URP or HDRP** 
-360 x 180 dome screen
+- 360 x 180 dome screen
  
 
