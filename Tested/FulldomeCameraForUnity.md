@@ -16,6 +16,8 @@ A Unity tool for fulldome rendering, compatible with **HDRP** and Unity versions
    - Distorts mesh vertices around the camera using custom Shader Graph nodes.  
    - Simulates fisheye lens effects at the shader level.
 
+- 💬 [Unity Discussion Thread](https://discussions.unity.com/t/fulldome-camera-for-unity/712999)
+
 ---
 
 ### ⚠️ Known Issues During Testing
