@@ -13,3 +13,10 @@ Tool for capturing skyboxes and generating equirectangular images in Unity.
 A full-featured renderer for capturing 360° panoramic video and stereo output.
 
 - 💬 [Unity Discussion Thread](https://discussions.unity.com/t/released-vr-panorama-render-360-stereo-videos/586559)
+
+
+### [Dome Tools](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/dome-tools-62664)
+- **Not compatible with URP or HDRP** 
+360 x 180 dome screen
+ 
+
