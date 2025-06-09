@@ -21,22 +21,24 @@ A Unity tool for fulldome rendering, compatible with **HDRP** and Unity versions
 
 ---
 
-### ⚠️ Known Issues During Testing
+### 🧪 Usage Methods
 
-- The generated output is a **square texture** (e.g., 4096×4096), regardless of whether it's rendered for 180° or 360°.
-- This texture is **not equirectangular** and therefore **not directly compatible with sphere-based viewers**.
-- The texture consists of:
-  - An **inner fisheye circle** (usable for 180° dome projection from the top view).
-  - An **outer ring of stretched content** representing the bottom half (not usable in standard full-sphere projections).
-- This format may work for top-down hemispherical domes but fails for full-sphere or planetarium-style viewing without additional conversion or remapping.
+#### 🔁 Method 1: Default Domemaster Output
+- Renders a **single square texture** (e.g., 4096×4096) with:
+  - An **inner fisheye circle** (usable for 180° top-down dome projection).
+  - An **outer ring of stretched bottom content** (not ideal for full-sphere use).
+- This format is **not equirectangular** and is **not directly usable with spherical or planetarium viewers**.
+- Best suited for **top-down hemispherical domes**, but **not recommended for full 360° immersive domes** without post-processing remapping.
+
+#### 🌀 Method 2: Cubemap to Equirectangular Shader (Recommended)
+- Includes a **custom shader** that converts a rendered **cubemap** to an **equirectangular** texture.
+- This method produces output that is **compatible with full-dome projection systems** and **sphere-based viewers**.
+- Does not require camera angle splitting or remapping workarounds.
+- Suitable for planetariums, immersive spheres, and general dome workflows.
 
 ### ✅ Updated Testing Notes (09/06/25)
 
-- Confirmed to work in **Unity 2022.3 (LTS)** — project can be exported and used without breaking.
-- New setup tested using **two separate cameras**:
-  - **One pointing upward**, and  
-  - **One pointing downward**  
-- Each camera renders to a **separate RenderTexture** rather than outputting a combined 360° view.
-- This method works reliably and is **usable for fulldome rendering**, especially when targeting hemispherical domes.
-- Avoids the previously unusable bottom-half distortion seen in the default single-texture setup.
-- Offers flexibility for post-processing or custom dome mapping workflows.
+
+- Shader-based equirectangular conversion tested and confirmed **usable in Unity 2022.3 (LTS)**.
+- ⚠️ **Performance Note:** Running in Unity 2022 may cause noticeable FPS drops due to **HDRP overhead** and **multiple render passes**, especially on mid-range systems.
+- Recommended to optimize camera settings and consider lower texture resolutions for real-time playback.
