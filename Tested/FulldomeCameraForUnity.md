@@ -2,6 +2,7 @@
 
 A Unity tool for fulldome rendering, compatible with **HDRP** and Unity versions **2019.2+**.
 
+
 ### 🧰 Features
 
 1. **Fulldome Camera**  
@@ -28,3 +29,14 @@ A Unity tool for fulldome rendering, compatible with **HDRP** and Unity versions
   - An **inner fisheye circle** (usable for 180° dome projection from the top view).
   - An **outer ring of stretched content** representing the bottom half (not usable in standard full-sphere projections).
 - This format may work for top-down hemispherical domes but fails for full-sphere or planetarium-style viewing without additional conversion or remapping.
+
+### ✅ Updated Testing Notes (09/06/25)
+
+- Confirmed to work in **Unity 2022.3 (LTS)** — project can be exported and used without breaking.
+- New setup tested using **two separate cameras**:
+  - **One pointing upward**, and  
+  - **One pointing downward**  
+- Each camera renders to a **separate RenderTexture** rather than outputting a combined 360° view.
+- This method works reliably and is **usable for fulldome rendering**, especially when targeting hemispherical domes.
+- Avoids the previously unusable bottom-half distortion seen in the default single-texture setup.
+- Offers flexibility for post-processing or custom dome mapping workflows.
